@@ -1,0 +1,149 @@
+console.log("Hello World!");
+
+//
+
+let num = 20
+num = 'Bob'
+
+//
+
+let a = 1
+let b = 2
+
+a+b
+a/b
+
+let first = 'Bob'
+let last = 'Lee'
+
+first+last
+
+first+' '+last
+
+first+a
+
+//
+
+let first_name = 'bob'
+let firstName = 'bob'
+
+//
+
+let is_working = true;
+let score_updated = false;
+
+let is_true = 90 > 50;
+let is_false = 90 < 50;
+
+let score = 30;
+
+let is_same = score == 30
+let is_same = score != 40
+
+//
+
+let a_list = []
+
+let b_list = [1,2,'hey',3]
+
+b_list[1]
+b_list[2]
+
+b_list.push('헤이')
+
+b_list.length
+
+//
+
+let a_dict = {}
+
+let b_dict = {'name':'Bob','age':21}
+b_dict['name']
+b_dict['age']
+
+b_dict['height'] = 180
+
+//
+
+let a = 20
+let b = 7
+
+a % b = 6
+
+//
+
+let myname = 'spartacodingclub'
+
+myname.toUpperCase()
+
+//
+
+let myemail = 'sparta@gmail.com'
+
+let result = myemail.split('@')
+
+result[0]
+result[1]
+
+let result2 = result[1].split('.')
+
+result2[0]
+result2[1]
+
+myemail.split('@')[1].split('.')[0]
+
+//
+
+let txt = '서울시-마포구-망원동'
+
+let names = txt.split('-');
+
+let result = names.join('>');
+
+//
+
+function sum(num1, num2) {
+	console.log('num1: ', num1, ', num2: ', num2);
+	return num1 + num2;
+}
+
+sum(3, 5);
+sum(4, -1);
+
+//
+
+
+function check_adult(person) {
+	if (person['age'] < 20 || person['age'] > 30){
+		return true;
+	} else {
+		return false;
+	}
+}
+
+//
+
+function compare_age(num){
+	if (num == 100) {
+		alert('와 100세!! 축하합니다!')
+	} else if (num > 80) {
+		alert('80보다 커요!')
+	} else {
+		alert('80보다 작아요!')
+	}
+}
+
+//
+
+let scores = [
+	{'name':'철수', 'score':90},
+	{'name':'영희', 'score':85},
+	{'name':'민수', 'score':70},
+  {'name':'형준', 'score':50},
+  {'name':'기남', 'score':68},
+  {'name':'동희', 'score':30},
+]
+
+for (let i = 0 ; i < scores.length ; i++) {
+	console.log(scores[i]);
+}
