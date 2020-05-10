@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+       <link href="https://fonts.googleapis.com/css?family=Stylish&amp;display=swap" rel="stylesheet">
+    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+
+    <style>
+        .wrap {
+            width: 900px;
+            margin: 10px auto;
+        }
+        
+        * {
+            font-family: 'Stylish', sans-serif;
+        }
+        .comment {
+            color: blue;
+            font-weight: bold;
+        }
+        
+        #post-box {
+            width: 500px;
+            margin: 20px auto;
+            padding: 50px;
+            border: black solid;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function hey() {
+            alert('안녕!');
+            console.log("Hello World");
+            let num = 'bob';
+            num = 30;
+            console.log(num);
+            let a = 1;
+            let b = 2;
+            console.log(a+b);
+            console.log(a/b);
+            let first = 'Bob';
+            let last = 'Lee';
+            first+last;
+            first+' '+last;
+            first+a;
+            /*
+            let first_name = 'bob'
+            let firstName = 'bob'
+            //
+            let is_working = true;
+            let score_updated = false;
+            */
+           let is_true = 90 > 50;
+           let is_false = 90 < 50;
+           let score = 30;
+           let is_same = score == 30
+           console.log(is_same)
+           let sum = 0;
+
+
+           is_same = score != 40
+           console.log(is_same)
+           if (is_name = true) {
+           for (let i = 0; i < 10; i++) {
+               sum += i;         // sum을 i만큼 증가시켜라. sum = sum + i 와 동일!
+            }
+            console.log(sum); 
+        
+            }
+            else {
+                console.log('없음');
+            };
+            function (num) {
+                let 
+            }
+
+           }
+           /*
+           let a_list = []
+           let b_list = [1,2,'hey',3]
+           b_list[1]
+           b_list[2]
+           b_list.push('헤이')
+           b_list.length
+           //
+
+            let a_dict = {};
+
+            let b_dict = {'name':'Bob','age':21};
+            b_dict['name'];
+            b_dict['age'];
+
+            b_dict['height'] = 180;
+
+            //
+
+            let a = 20;
+            let b = 7;
+
+            a % b = 6;
+
+            //
+
+            let myname = 'spartacodingclub';
+
+            myname.toUpperCase();
+
+            //
+
+            let myemail = 'sparta@gmail.com';
+
+            let result = myemail.split('@')
+
+            result[0]
+            result[1]
+
+            let result2 = result[1].split('.')
+
+            result2[0]
+            result2[1]
+
+            myemail.split('@')[1].split('.')[0]
+
+            //
+
+            let txt = '서울시-마포구-망원동'
+
+            let names = txt.split('-');
+
+            let result = names.join('>');
+
+            */
+
+
+    </script>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <div class="jumbotron">
+            <h1 class="display-4">나홀로 링크 메모장</h1>
+            <p class="lead">
+                중요한 링크를 저장해두고, 나중에 볼 수 있는 공간입니다</p>
+            <hr class="my-4">
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="#" role="button">포스팅 박스 열기</a>
+            </p>
+        </div>
+        <div class="form-post" id="post-box">
+            <div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">아티클 URL</label>
+                    <input class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">간단 코멘트</label>
+                    <textarea class="form-control" rows="2"></textarea>
+                </div>
+                <button onclick="hey()" type="button" class="btn btn-primary">기사저장</button>
+            </div>
+        </div>
+
+        <div class="card-columns">
+            <div class="card">
+                <img class="card-img-top"
+                    src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
+                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산....</p>
+                    <p class="comment">여기에 코멘트가 들어갑니다</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top"
+                    src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
+                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산....</p>
+                    <p class="comment">여기에 코멘트가 들어갑니다</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top"
+                    src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
+                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산....</p>
+                    <p class="comment">여기에 코멘트가 들어갑니다</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top"
+                    src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
+                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산....</p>
+                    <p class="comment">여기에 코멘트가 들어갑니다</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top"
+                    src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
+                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산....</p>
+                    <p class="comment">여기에 코멘트가 들어갑니다</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top"
+                    src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
+                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산....</p>
+                    <p class="comment">여기에 코멘트가 들어갑니다</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
