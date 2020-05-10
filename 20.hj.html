@@ -55,12 +55,61 @@
             console.log(names[0]['name']);
 
 
-            new_name = {'name':'새롬','age':19}
-            names.push(new_name)
+            new_name = {'name':'새롬','age':19};
+            names.push(new_name);
             console.log(names[2]['name']);
 
             console.log(names.length);
+
+            let myname = 'spartacodingclub';
+            console.log(myname.toUpperCase());
+
+            let myemail = 'sparta@gmail.com';
+            let result = myemail.split('@');
+            console.log(result[0]);
+
+            let result_mail = result[1].split('.');
+            console.log(result_mail[0])
+
+
+            function sum(num1, num2) {
+	            console.log('num1: ', num1, ', num2: ', num2);
+    	        return num1 + num2;
+            };
+
+            console.log(sum(3,5));
+
+
+            let people = ['철수','영희','민수','형준','기남','동희','조커']
+
+            for(let i=0; i<7; i++){
+                console.log(people[i]);
+            };
+
+            let scores = [
+                {'name':'철수', 'score':90},
+                {'name':'영희', 'score':85},
+                {'name':'민수', 'score':70},
+                {'name':'형준', 'score':50},
+                {'name':'기남', 'score':68},
+                {'name':'동희', 'score':30},
+            ];
+
+            console.log('점수가 70점 이상인 사람만 취급합니다');
+
+            for(let s=0; s<scores.length; s++){
+
+                if(scores[s].score >= 70){
+                    console.log(scores[s].name+"님은 "+scores[s].score+"점이에요");
+                }
+                else {
+                    console.log(scores[s].name+"님은 사람인가요?");
+                };
+            };
+            
         }
+
+        
     </script>
 </head>
 
@@ -79,11 +128,11 @@
         <div class="wrap-form">
             <div class="form-group">
                 <label for="exampleInput1">아티클 URL</label>
-                <input class="form-control" placeholder="url을 넣어주세요">
+                <input class="form-control" placeholder="url을 입력해 주세요">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">간단 코멘트</label>
-                <textarea class="form-control" rows="2"></textarea>
+                <textarea class="form-control" rows="3" placeholder="코멘트를 입력해 주세요"></textarea>
             </div>
             <button onclick="hey()" type="submit" class="btn btn-primary">기사 저장</button>
         </div>
