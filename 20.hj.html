@@ -40,16 +40,26 @@
     </style>
     <script>
         function hey(){
-            alert('안녕!');
-            console.log("Hello World!");
+            
+            let is_working = true;
+            let score_updated = false;
 
-            let num = 20;
-            let first = "zoe";
-            let last = "roh";
+            let score = 30;
 
-            console.log(num);
-            console.log(first+" "+last);
-            console.log(first+num);
+            let is_same = score != 40
+
+            console.log(is_same);
+
+
+            names = [{'name':'향정','age':20},{'name':'경민','age':17}]
+            console.log(names[0]['name']);
+
+
+            new_name = {'name':'새롬','age':19}
+            names.push(new_name)
+            console.log(names[2]['name']);
+
+            console.log(names.length);
         }
     </script>
 </head>
