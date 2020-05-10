@@ -46,21 +46,45 @@
     </style>
     <script>
         function hey() {
+            let a = 20
+            let b = 7
 
-            let scores = [
-                {'name':'철수', 'score':90},
-                {'name':'영희', 'score':85},
-                {'name':'민수', 'score':70},
-            {'name':'형준', 'score':50},
-            {'name':'기남', 'score':68},
-            {'name':'동희', 'score':30},
-            ]
+            console.log(a % b);
 
-            for (let i = 0 ; i < scores.length ; i++) {
-                if (scores[i]['score'] > 70) {
-                    console.log(scores[i]['name']);
-                }
-            }
+
+            let myname = 'spartacodingclub'
+
+            console.log(myname.toUpperCase()); // SPARTACODINGCLUB
+
+
+
+            또, 특정 문자로 문자열을 나누고 싶은 경우
+
+            let myemail = 'sparta@gmail.com'
+
+            let result = myemail.split('@') // ['sparta','gmail.com']
+
+            console.log(result[0]); // sparta
+            console.log(result[1]); // gmail.com
+
+            let result2 = result[1].split('.') // ['gmail','com']
+
+            console.log(result2[0]); // gmail -> 우리가 알고 싶었던 것!
+            console.log(result2[1]); // com
+
+            console.log(myemail.split('@')[1].split('.')[0]); // gmail -> 간단하게 쓸 수도 있다!
+
+            let txt = '서울시-마포구-망원동'
+
+            let names = txt.split('-'); // ['서울시','마포구','망원동']
+
+            let result = names.join('>'); // '서울시>마포구>망원동' (즉, 문자열 바꾸기!)
+
+
+            
+
+
+            
         }
 
     </script>
