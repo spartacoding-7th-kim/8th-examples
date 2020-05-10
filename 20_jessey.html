@@ -36,23 +36,17 @@
     </style>
     <script>
         function hey() {
-            alert("헤이");
-            console.log("원하는 메시지");
-            let num = 20;
-            num = "bob"
-            console.log(num);
-            let first = "jessey";
-            let last = "jung";
-            console.log(first + " " + last);
+            function get_sum(n){
+                let sum = 0; //sum을 0이라고 하자
+                for (let i = 0; i < n; i++ ) { //i가 0에서 시작해서 n보다 작을 때까지 i를 증가시켜라
+                    sum += i; // sum에다 i를 더해줘라
+                }
+                return sum; // 최종적으로 구해진 sum을 구해라
+            }
 
-            let students = [{'name':'jessey', 'age':'29', 'height':'165'}, {'name':'bob', 'age':'30', 'height':'180'}];
-            console.log(students);
-            console.log(students[0]);
-            console.log(students[0]['name']);
-            
-            let new_student = [{'name':'kevin', 'age':'31', 'height':'175'}];
-            students.push(new_student);
-            console.log(students);
+            let result = get_sum(10);
+            console.log(result);
+
         }
     </script>
 </head>
