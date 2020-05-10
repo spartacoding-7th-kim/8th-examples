@@ -6,55 +6,32 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+      <!-- 구글폰트 -->
+      <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+
+
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
 
     <style>
+        * {
+            font-family: 'Stylish', sans-serif;
+        }
         .wrap {
             width: 900px;
             margin: 10px auto;
         }
 
-        .card-comment {
-            color: blue;
+        .comment{
+            color:blue;
+            font-weight: bold;
+
         }
 
-        #post-box {
-            width: 500px;
-            margin: 20px auto;
-            padding: 50px;
-            border: black solid;
-            border-radius: 5px;
-        }
-
-        *{
-            font-family: 'Noto Sans KR', sans-serif;
-        }
     </style>
-    <script>
-        function hey() {
-            alert("헤이");
-            console.log("원하는 메시지");
-            let num = 20;
-            num = "bob"
-            console.log(num);
-            let first = "jessey";
-            let last = "jung";
-            console.log(first + " " + last);
-
-            let students = [{'name':'jessey', 'age':'29', 'height':'165'}, {'name':'bob', 'age':'30', 'height':'180'}];
-            console.log(students);
-            console.log(students[0]);
-            console.log(students[0]['name']);
-            
-            let new_student = [{'name':'kevin', 'age':'31', 'height':'175'}];
-            students.push(new_student);
-            console.log(students);
-        }
-    </script>
 </head>
 
 <body>
@@ -62,24 +39,11 @@
     <div class="wrap">
         <div class="jumbotron">
             <h1 class="display-4">나홀로 링크 메모장!</h1>
-            <p class="lead"> 중요한 링크를 저장해두고, 나중에 볼 수 있는 공간입니다. </p>
+            <p class="lead">중요한 링크를 저장해두고, 나중에 볼 수 있는 공간입니다</p>
             <hr class="my-4">
             <p class="lead">
                 <a class="btn btn-primary btn-lg" href="#" role="button">포스팅박스 열기</a>
             </p>
-        </div>
-        <div class="form-post" id="post-box">
-            <div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">아티클 URL</label>
-                    <input class="form-control" placeholder="">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">간단 코멘트</label>
-                    <textarea class="form-control" rows="2"></textarea>
-                </div>
-                <button onclick=hey() type="button" class="btn btn-primary">기사저장</button>
-            </div>
         </div>
 
         <div class="card-columns">
@@ -90,7 +54,7 @@
                 <div class="card-body">
                     <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
                     <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
-                    <p class="card-comment"> 여기에 코멘트가 들어갑니다. </p>
+                    <p  class="comment">여기에 코멘트가 들어갑니다.</p>
                 </div>
             </div>
             <div class="card">
@@ -100,7 +64,7 @@
                 <div class="card-body">
                     <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
                     <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
-                    <p class="card-comment"> 여기에 코멘트가 들어갑니다. </p>
+                    <p class="comment">여기에 코멘트가 들어갑니다.</p>
                 </div>
             </div>
             <div class="card">
@@ -110,7 +74,7 @@
                 <div class="card-body">
                     <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
                     <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
-                    <p class="card-comment"> 여기에 코멘트가 들어갑니다. </p>
+                    <p class="comment">여기에 코멘트가 들어갑니다.</p>
                 </div>
             </div>
             <div class="card">
@@ -120,7 +84,7 @@
                 <div class="card-body">
                     <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
                     <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
-                    <p class="card-comment"> 여기에 코멘트가 들어갑니다. </p>
+                    <p class="comment">여기에 코멘트가 들어갑니다.</p>
                 </div>
             </div>
             <div class="card">
@@ -130,7 +94,7 @@
                 <div class="card-body">
                     <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
                     <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
-                    <p class="card-comment"> 여기에 코멘트가 들어갑니다. </p>
+                    <p class="comment">여기에 코멘트가 들어갑니다.</p>
                 </div>
             </div>
             <div class="card">
@@ -140,12 +104,11 @@
                 <div class="card-body">
                     <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
                     <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
-                    <p class="card-comment"> 여기에 코멘트가 들어갑니다. </p>
+                    <p class="comment">여기에 코멘트가 들어갑니다.</p>
                 </div>
             </div>
         </div>
     </div>
-
 </body>
 
 </html>
