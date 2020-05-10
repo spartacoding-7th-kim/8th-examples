@@ -7,20 +7,34 @@
     <style>
         /* 태그명을 바로 가리킬 때 */
         body {
-            background-color: green;
-            color: green;
+            background-color: black;
+            color: white;
         }
 
         /* class를 만들어 가리킬 때 */
+        .mytitle-old {
+            color: gray;
+        }
         .mytitle {
-            color: yellow;
+            color: white;
+            width: 300px;
+            height: 200px;
+            background-image: url('https://www.ancient-origins.net/sites/default/files/field/image/Agesilaus-II-cover.jpg');
+            background-position: center;
+            background-size: cover;
+            
+            border-radius: 10px;
+            text-align: center;
+            padding-top: 40px;
+        }
+        .small-font {
+            font-size: 10px;
         }
     </style>
 </head>
 <body>
-    test
     <h1 class="mytitle">로그인 Page</h1>
-    <div class="mytitle">
+    <div class="mytitle-old">
         <p>
             ID:<input type="text" />
         </p>
