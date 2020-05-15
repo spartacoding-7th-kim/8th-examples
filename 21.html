@@ -7,114 +7,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
-        
-    <title>부트스트랩 연습</title>
+    <!-- 구글폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
 
-    <style>
+    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+
+    <!-- style -->
+    <style type="text/css">
         * {
-            font-family: 'Nanum Myeongjo', sans-serif;
+            font-family: 'Stylish', sans-serif;
         }
 
         .wrap {
             width: 900px;
-            margin: 10px auto;
-        }
-
-        .wrap-form {
-            width: 500px;
-            margin: 20px auto;
-            border: black solid;
-            border-radius: 5px;
-            padding: 50px;
+            margin: auto;
         }
 
         .comment {
-            color: blueviolet;
+            color: black;
             font-weight: bold;
+        }
+
+        #post-box {
+            width: 500px;
+            margin: 20px auto;
+            padding: 50px;
+            border: black solid;
+            border-radius: 5px;
         }
     </style>
     <script>
-        function hey(){
+        function hey() {
+            let a = 20
+            let b = 7
+
+            console.log(a % b);
+
+
+            let myname = 'spartacodingclub'
+
+            console.log(myname.toUpperCase()); // SPARTACODINGCLUB
+
+
+
+            또, 특정 문자로 문자열을 나누고 싶은 경우
+
+            let myemail = 'sparta@gmail.com'
+
+            let result = myemail.split('@') // ['sparta','gmail.com']
+
+            console.log(result[0]); // sparta
+            console.log(result[1]); // gmail.com
+
+            let result2 = result[1].split('.') // ['gmail','com']
+
+            console.log(result2[0]); // gmail -> 우리가 알고 싶었던 것!
+            console.log(result2[1]); // com
+
+            console.log(myemail.split('@')[1].split('.')[0]); // gmail -> 간단하게 쓸 수도 있다!
+
+            let txt = '서울시-마포구-망원동'
+
+            let names = txt.split('-'); // ['서울시','마포구','망원동']
+
+            let result = names.join('>'); // '서울시>마포구>망원동' (즉, 문자열 바꾸기!)
+
+
             
-            let is_working = true;
-            let score_updated = false;
-
-            let score = 30;
-
-            let is_same = score != 40
-
-            console.log(is_same);
 
 
-            names = [{'name':'향정','age':20},{'name':'경민','age':17}]
-            console.log(names[0]['name']);
-
-
-            new_name = {'name':'새롬','age':19};
-            names.push(new_name);
-            console.log(names[2]['name']);
-
-            console.log(names.length);
-
-            let myname = 'spartacodingclub';
-            console.log(myname.toUpperCase());
-
-            let myemail = 'sparta@gmail.com';
-            let result = myemail.split('@');
-            console.log(result[0]);
-
-            let result_mail = result[1].split('.');
-            console.log(result_mail[0])
-
-
-            function sum(num1, num2) {
-	            console.log('num1: ', num1, ', num2: ', num2);
-    	        return num1 + num2;
-            };
-
-            console.log(sum(3,5));
-
-
-            let people = ['철수','영희','민수','형준','기남','동희','조커']
-
-            for(let i=0; i<7; i++){
-                console.log(people[i]);
-            };
-
-            let scores = [
-                {'name':'철수', 'score':90},
-                {'name':'영희', 'score':85},
-                {'name':'민수', 'score':70},
-                {'name':'형준', 'score':50},
-                {'name':'기남', 'score':68},
-                {'name':'동희', 'score':30},
-            ];
-
-            console.log('점수가 70점 이상인 사람만 취급합니다');
-
-            for(let s=0; s<scores.length; s++){
-
-                if(scores[s].score >= 70){
-                    console.log(scores[s].name+"님은 "+scores[s].score+"점이에요");
-                }
-                else {
-                    console.log(scores[s].name+"님은 사람인가요?");
-                };
-            };
             
         }
 
-        
     </script>
+
 </head>
 
 <body>
-
     <div class="wrap">
         <div class="jumbotron">
             <h1 class="display-4">나홀로 링크 메모장!</h1>
@@ -125,16 +102,20 @@
             </p>
         </div>
 
-        <div class="wrap-form">
-            <div class="form-group">
-                <label for="exampleInput1">아티클 URL</label>
-                <input class="form-control" placeholder="url을 입력해 주세요">
+
+        <div class="form-post" id="post-box">
+            <div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">아티클 URL</label>
+                    <input class="form-control" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">간단 코멘트</label>
+                    <textarea class="form-control" rows="2"></textarea>
+                </div>
+                <button onclick="hey()" type="button" class="btn btn-primary">기사저장</button>
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">간단 코멘트</label>
-                <textarea class="form-control" rows="3" placeholder="코멘트를 입력해 주세요"></textarea>
-            </div>
-            <button onclick="hey()" type="submit" class="btn btn-primary">기사 저장</button>
         </div>
 
         <div class="card-columns">
@@ -143,9 +124,9 @@
                     src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
                     alt="Card image cap">
                 <div class="card-body">
-                    <a href="#">여기 기사 제목이 들어가죠</a>
+                    <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
                     <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
-                    <p class="comment">여기에 코멘트가 들어갑니다.</p>
+                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
                 </div>
             </div>
             <div class="card">
@@ -153,9 +134,9 @@
                     src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
                     alt="Card image cap">
                 <div class="card-body">
-                    <a href="#">여기 기사 제목이 들어가죠</a>
+                    <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
                     <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
-                    <p class="comment">여기에 코멘트가 들어갑니다.</p>
+                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
                 </div>
             </div>
             <div class="card">
@@ -163,9 +144,9 @@
                     src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
                     alt="Card image cap">
                 <div class="card-body">
-                    <a href="#">여기 기사 제목이 들어가죠</a>
+                    <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
                     <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
-                    <p class="comment">여기에 코멘트가 들어갑니다.</p>
+                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
                 </div>
             </div>
             <div class="card">
@@ -173,9 +154,9 @@
                     src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
                     alt="Card image cap">
                 <div class="card-body">
-                    <a href="#">여기 기사 제목이 들어가죠</a>
+                    <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
                     <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
-                    <p class="comment">여기에 코멘트가 들어갑니다.</p>
+                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
                 </div>
             </div>
             <div class="card">
@@ -183,9 +164,9 @@
                     src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
                     alt="Card image cap">
                 <div class="card-body">
-                    <a href="#">여기 기사 제목이 들어가죠</a>
+                    <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
                     <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
-                    <p class="comment">여기에 코멘트가 들어갑니다.</p>
+                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
                 </div>
             </div>
             <div class="card">
@@ -193,14 +174,13 @@
                     src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
                     alt="Card image cap">
                 <div class="card-body">
-                    <a href="#">여기 기사 제목이 들어가죠</a>
+                    <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
                     <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
-                    <p class="comment">여기에 코멘트가 들어갑니다.</p>
+                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
                 </div>
             </div>
         </div>
     </div>
-
 </body>
 
 </html>
