@@ -46,83 +46,21 @@
     </style>
     <script>
         function hey() {
-            // alert('안녕!');
-            // console.log("원하는 메시지");
 
-            let num = 20;
-            num = 'bob';
-            console.log(num);
-            console.log(20);
+            let scores = [
+                {'name':'철수', 'score':90},
+                {'name':'영희', 'score':85},
+                {'name':'민수', 'score':70},
+            {'name':'형준', 'score':50},
+            {'name':'기남', 'score':68},
+            {'name':'동희', 'score':30},
+            ]
 
-            let a = 1;
-            let b = 2;
-            console.log(a+b);
-            console.log(a/b);
-
-            let first = 'Bob'
-            let last = 'Lee'
-
-            console.log(first+last); // 'BobLee'
-            console.log(first+a);
-
-            let is_working = false;
-            let score_updated = false;
-            console.log(is_working);
-            console.log(score_updated);
-
-            // if(is_working){
-            //     console.log("_____");
-            // }
-            // else{
-            //     console.log("+++++");
-            // }
-
-            let is_true = 90 < 50;
-
-            // if(is_true){
-            //     console.log("_____");
-            // }
-            // else{
-            //     console.log("+++++");
-            // }
-
-            let score = 30;
-            let is_same = score == 30;
-            if(is_same){
-                console.log("_____");
+            for (let i = 0 ; i < scores.length ; i++) {
+                if (scores[i]['score'] > 70) {
+                    console.log(scores[i]['name']);
+                }
             }
-            else{
-                console.log("+++++");
-            }
-
-            let a_list = []  // 리스트를 선언. 변수 이름은 역시 아무렇게나 가능!
-
-            // 또는,
-
-            let b_list = [1,2,'hey',3] // 로 선언 가능
-
-            b_list[1] // 2 를 출력
-            b_list[2] // 'hey'를 출력
-
-            // 리스트에 요소 넣기
-            b_list.push('헤이')
-            console.log(b_list); // [1, 2, "hey", 3, "헤이"] 를 출력
-
-            // 리스트의 길이 구하기
-            console.log(b_list.length); // 5를 출력
-
-            let a_dict = {}  // 딕셔너리 선언. 변수 이름은 역시 아무렇게나 가능!
-
-            // 또는,
-
-            let b_dict = {'name':'Bob','age':21} // 로 선언 가능
-            console.log(b_dict['name']); // 'Bob'을 출력
-            console.log(b_dict['age']); // 21을 출력
-
-            b_dict['height'] = 180 // 딕셔너리에 키:밸류 넣기
-            console.log(b_dict); // {name: "Bob", age: 21, height: 180}을 출력
-
-            
         }
 
     </script>

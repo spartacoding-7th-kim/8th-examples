@@ -46,9 +46,17 @@
     </style>
 
     <script>
-        function hey(){
-	alert('안녕!');
-}
+            function hey(){
+                function get_sum(n) {
+                    let sum = 0;
+                    for (let i = 0; i < n; i++){
+                        sum +=i;
+                    }
+                    return sum;
+                }
+                let result = get_sum(10);
+                console.log(result)
+            }
     </script>
 
 </head>

@@ -145,9 +145,9 @@ integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6J
                 return num1 + num2;
             }
 
-            sum(3, 5);
-            sum(4, -1);
-
+            let sum1 = sum(3, 5);
+            let sum2 = sum(4, -1);
+            console.log(sum1, sum2);
             //
 
 
@@ -158,7 +158,8 @@ integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6J
                     return false;
                 }
             }
-
+            let agee=check_adult(34);
+            console.log(agee);
             //
 
             function compare_age(num){
@@ -170,7 +171,7 @@ integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6J
                     alert('80보다 작아요!')
                 }
             }
-
+            compare_age(100)
             //
 
             let scores = [
@@ -183,7 +184,7 @@ integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6J
             ]
 
             for (let i = 0 ; i < scores.length ; i++) {
-                console.log(scores[i]);
+                console.log(scores[i]['name']);
             }
         }
     </script>
