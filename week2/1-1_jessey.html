@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>홀짝계산기</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         let num = 0;
+        function defaultClick() {
+            $("#num-default").text(num);
+        }
         function handleClick() {
             num += 1;
             if (num % 2 == 0) {
@@ -14,13 +18,17 @@
             else{
                 alert("홀홀홀🎅")
             }
+            $("#num").text(num);
         }
     </script>
 </head>
-<body>
-    <p>
-        현재 홀짝 숫자:
-     </p>
-    <button onclick="handleClick()">홀짝 계산하기</button>
+<bod>
+    <h1>
+        <p style="float:left;">현재 홀짝 숫자:</p>
+        <p id="num" style="float:left; margin-left:10px;"> </p>
+    </h1>
+    <div style="clear:both;"></div>
+    <button onclick="handleClick()" style="width:100px; height:50px;">홀짝 계산하기</button>
 </body>
 </html>
+
