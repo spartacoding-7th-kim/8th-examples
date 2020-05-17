@@ -22,6 +22,10 @@
             padding: 10px;
             border: 1px solid;
         }
+
+        .few{
+            color: red;
+        }
     </style>
 
     <script>
@@ -42,13 +46,24 @@
                         let ddaRackTotCnt = ddareungi['rackTotCnt'];
                         let ddaParkingBikeTotCnt = ddareungi['parkingBikeTotCnt'];
 
-                        let temp_html = `<tr>
+                        if(ddaParkingBikeTotCnt < 3) {
+                            let temp_html = `<tr class="few">
                                             <td>${ddaStationName}</td>
                                             <td>${ddaRackTotCnt}</td>
                                             <td>${ddaParkingBikeTotCnt}</td>
                                         </tr>`;
 
-                        $('#names-q1').append(temp_html);
+                            $('#names-q1').append(temp_html);
+                        } else {
+                            let temp_html = `<tr>
+                                            <td>${ddaStationName}</td>
+                                            <td>${ddaRackTotCnt}</td>
+                                            <td>${ddaParkingBikeTotCnt}</td>
+                                        </tr>`;
+
+                            $('#names-q1').append(temp_html);
+                        }
+                        
                     }
                 }
             })
