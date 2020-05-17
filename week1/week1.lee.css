@@ -9,7 +9,6 @@ body {
 }
 .subject {
   text-align: center;
-  display: flex;
 }
 .name {
   justify-content: flex-start;
