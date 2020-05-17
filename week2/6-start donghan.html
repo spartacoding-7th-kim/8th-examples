@@ -20,14 +20,12 @@
     <title>스파르타코딩클럽 | 나홀로메모장</title>
 
     <!-- 구글폰트 -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
 
     <!-- style -->
     <style type="text/css">
         * {
-            font-family: 'Noto Sans KR', sans-serif;
-            letter-spacing: -0.5px;
-            font-size: small;
+            font-family: 'Stylish', sans-serif;
         }
 
         .wrap {
@@ -51,17 +49,18 @@
     </style>
 
     <script>
-        
-        function showhideBox(){
-            if($('#post-box').css('display') == 'none'){
-                $('#post-box').show();
-                $('#btn-posting-box').text('포스팅 박스 닫기');
-            } else {
-                $('#post-box').hide();
-                $('#btn-posting-box').text('포스팅 박스 열기');
+        function openclose() {
+             if ($('#post-box').css('display') == 'block') {
+         // post-box를 가리고
+         $('#post-box').hide();
+         $('#btn-posting-box').text('포스팅 박스 열기')
+
+             } else {
+         // 아니면 post-box를 펴라
+         $('#post-box').show();
+         $('#btn-posting-box').text('포스팅 박스 닫기')
             }
         }
-
     </script>
 </head>
 
@@ -72,7 +71,7 @@
             <p class="lead">중요한 링크를 저장해두고, 나중에 볼 수 있는 공간입니다</p>
             <hr class="my-4">
             <p class="lead">
-                <button id="btn-posting-box" class="btn btn-primary btn-lg" onclick="showhideBox()">포스팅 박스 열기</button>
+                <button onclick="openclose()" id="btn-posting-box" class="btn btn-primary btn-lg">포스팅 박스 열기</button>
             </p>
         </div>
         <div class="form-post" id="post-box">
