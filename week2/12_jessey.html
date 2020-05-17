@@ -22,11 +22,19 @@
                 data:{},
                 success: function (response) {
                     console.log(response);
+                    $('#names-q1').empty();
                     let rows = response["RealtimeCityAir"]["row"];
                     for (let i = 0; i < rows.length; i++) {
                         let gu_name = rows[i]['MSRSTE_NM'];
                         let gu_mise = rows[i]['IDEX_MVL'];
-                        let temp_html = `<li>${gu_name} : ${gu_mise}</li>`
+                        let color = ""
+                        if (gu_mise >= 70) {   
+                            color = "red";
+                        } else {
+                            color = "black";
+                        }
+                
+                        let temp_html = `<li style="color:${color}">${gu_name} : ${gu_mise}</li>`
                         $('#names-q1').append(temp_html);
                     }
                
