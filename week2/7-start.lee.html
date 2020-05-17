@@ -30,6 +30,15 @@
       }
 
       function q2() {
+        let email = $("#input-q2").val();
+        if (email.includes("@")) {
+          let domainwithdot = email.split("@")[1];
+          let domain = domainwithdot.split(".")[0];
+          alert(domain);
+        } else {
+          alert("이메일이 아닌데요?");
+        }
+
         // 1. input-q2 값을 가져온다.
         // 2. 만약 가져온 값에 @가 있으면 (includes 이용하기 - 찾아보자!)
         // 3. info.spartacoding@gmail.com -> gmail 만 추출해서
@@ -38,12 +47,17 @@
       }
 
       function q3() {
+        let name = $("#input-q3").val();
+        let readyname = "<li>" + name + "<li>";
+        $("#names-q3").append(readyname);
+
         // 1. input-q3 값을 가져온다.
         // 2. 가져온 값을 이용해 names-q3에 붙일 태그를 만든다. (let temp_html = '<li>임꺽정</li>')
         // 3. 만들어둔 temp_html을 names-q3에 붙인다.(jQuery의 $('...').append(temp_html)을 이용하면 굿!)
       }
 
       function q3_remove() {
+        $("#names-q3").empty();
         // 1. names-q3의 내부 태그를 모두 비운다.(jQuery의 $('....').empty()를 이용하면 굿!)
       }
     </script>
