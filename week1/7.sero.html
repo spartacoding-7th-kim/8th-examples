@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,28 +8,56 @@
     <style>
         /* 태그명을 바로 가리킬 때 */
         body {
-            background-color: green;
-            color: green;
+            background-color: white;
+            color: black;
         }
 
         /* class를 만들어 가리킬 때 */
         .mytitle {
-            color: yellow;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
         }
+
+        .login_image {
+            color: white;
+            width: 300px;
+            height: 200px;
+            background-image: url('data:image/jpeg;base64,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');
+            background-position: center;
+            background-size: cover;
+
+            border-radius: 10px;
+            text-align: center;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+
+        .wrap {
+            margin: 10px auto;
+            width: 300px;
+            font-family: 'Raleway', sans-serif;
+        }
+        
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,200&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    test
-    <h1 class="mytitle">로그인 Page</h1>
-    <div class="mytitle">
-        <p>
-            ID:<input type="text" />
-        </p>
-        <p>
-            PW:<input type="password"/>
-        </p>
-    </p>
+    <div class="wrap">
+        <h1 class="login_image">로그인 Page</h1>
+        <div class="mytitle">
+            <p>
+                ID:<input type="text" />
+            </p>
+            <p>
+                PW:<input type="password" />
+            <div><a href="http://naver.com">이게뭐임</a></div>
+            </p>
+
+        </div>
+        <button class="mytitle">로그인하기</button>
     </div>
-    <button>로그인하기</button>
 </body>
+
 </html>
