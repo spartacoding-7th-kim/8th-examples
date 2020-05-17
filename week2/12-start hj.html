@@ -13,6 +13,11 @@
         div.question-box {
             margin: 10px 0 20px 0;
         }
+
+        .bad {
+            color: red;
+            font-weight: bold;
+        }
     </style>
 
     <script>
@@ -24,7 +29,7 @@
                 data: {},
                 success: function(response){
                     $('#names-q1').empty();
-                    
+
                     let guNongdo = '';
                     for (let index = 0; index < response["RealtimeCityAir"]["row"].length; index++) {
                         guNongdo = response["RealtimeCityAir"]["row"][index];
@@ -36,7 +41,7 @@
                             let temp_html = `<li>${guMSRSTE_NM} : ${guIDEX_MVL}</li>`
                             $('#names-q1').append(temp_html);
                         } else {
-                            let temp_html = `<li style="color:red">${guMSRSTE_NM} : ${guIDEX_MVL}</li>`
+                            let temp_html = `<li class="bad">${guMSRSTE_NM} : ${guIDEX_MVL}</li>`
                             $('#names-q1').append(temp_html);
                         }
                         
