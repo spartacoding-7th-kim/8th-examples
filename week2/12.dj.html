@@ -29,8 +29,9 @@
                     for (let i = 0; i < response["RealtimeCityAir"]["row"].length; i++) {
                         let name = response["RealtimeCityAir"]["row"][i]["MSRSTE_NM"];
                         let conc = response["RealtimeCityAir"]["row"][i]["IDEX_MVL"];
+                        let result = "";
                         if (conc > 70) {
-                            let result = "<li style="color:red">" + name + " " + conc + "</li>";
+                            result = "<li style='color:red'>" + name + " " + conc + "</li>";
                         }
                         else {
                             result = "<li>" + name + " " + conc + "</li>";
