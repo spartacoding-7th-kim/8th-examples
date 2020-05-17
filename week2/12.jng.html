@@ -30,8 +30,19 @@
                         let gu = response["RealtimeCityAir"]["row"][index];
                         let get_gu_name = gu["MSRSTE_NM"];
                         let get_gu_index = gu["IDEX_MVL"];
-                        let get_gu = "<li>" + get_gu_name + " : " + get_gu_index;
+                    
+                        let get_gu = "";
+                        if (gu["IDEX_MVL"] >= 70){
+                            // $("#names-q1").css("color","red");
+                            get_gu = "<li style=color:red>" + get_gu_name + " : " + get_gu_index +"</li>";
+
+                        }else{
+                            get_gu = "<li>" + get_gu_name + " : " + get_gu_index +"</li>";
+
+                        }
+
                         $("#names-q1").append(get_gu);
+                    
                     }
                 }
             })// 여기에 코드를 입력하세요
