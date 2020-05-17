@@ -50,16 +50,14 @@
 
     <script>
         
-        let show = 0;
-        function showhideBox() {
-            show += 1;
-            if(show % 2 == 1){
+        function showhideBox(){
+            if($('#post-box').css('display') == 'none'){
                 $('#post-box').show();
-                $('#btn-posting-box').text("포스팅 박스 닫기");
-            } else{
+                $('#btn-posting-box').text('포스팅 박스 닫기');
+            } else {
                 $('#post-box').hide();
-                $('#btn-posting-box').text("포스팅 박스 열기");
-            }   
+                $('#btn-posting-box').text('포스팅 박스 열기');
+            }
         }
 
     </script>
