@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700&display=swap&subset=korean" rel="stylesheet">
+    <title>wheretogo | 상품 상세</title>
+    <style>
+        *{
+        font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+        .divider{
+            width: 1200px;
+            color: black;
+            margin-left: 20px;
+        }
+
+        .GNB{
+            width: 1600px;
+            height: 100px;
+            background-color: lightgrey;
+            margin-bottom: 10px;
+        }
+
+        .main{
+            width: 1600px;
+            height: 75px;
+            background-color: lightgrey;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+
+        .search-results{
+            width: 1600px;
+            height: 300px;
+            background-color: lightgrey;
+            margin-bottom: 10px;
+            padding: 20px;
+        }
+        
+        .result-hashtag {
+            width: 1200px;
+            height: 50px;
+            background-color: darkgray;
+            margin-bottom: 5px;
+        }
+
+        .result-explanation {
+            width: 1200px;
+            height: 50px;
+            background-color: darkgray;
+            margin-bottom: 5px;
+        }
+
+        .result-cards {
+            width: 1200px;
+            height: 150px;
+            background-color: darkgray;
+            margin-bottom: 5px;        
+        }
+
+        .card{
+            width: 200px;
+            height: 150px;
+            background-size: cover;
+            background-position: center center;
+            border-radius: 10px;
+        }
+
+        .travel-template{
+            width: 1600px;
+            height: 1230px;
+            background-color: lightgray;
+            margin-bottom: 10px;
+            padding: 20px;
+        }
+
+        .travel-template .title{
+            width: 1200px;
+            height: 50px;
+            background-color: darkgray;
+            margin-bottom: 5px;          
+        }
+
+        .travel-template .not-included{
+            width: 1200px;
+            height: 50px;
+            background-color: darkgray;
+            margin-bottom: 5px;
+        }
+        
+        .travel-template .action-buttons{
+            width: 1200px;
+            height: 50px;
+            background-color: darkgray;
+            margin-bottom: 5px;
+        }
+
+        .travel-template .attractions{
+            width: 1200px;
+            height: 985px;
+            background-color: darkgray;
+        }
+
+        .travel-template .attractions .attraction-selected{
+            width: 1100px;
+            height: 320px;
+            background-color:yellowgreen;
+            position: relative;
+            left: 10px;
+            top: 10px;
+        }
+
+        .attraction-thumbnail{
+            width: 400px;
+            height: 300px;
+            background-size: cover;
+            background-position: center center;
+            border-radius: 10px; 
+            float: left; 
+            margin: 10px;
+        }
+
+        .attraction-details{
+            width: 670px;
+            height: 300px;
+            background-color: yellow;
+            float: left;
+            margin: 10px auto;
+        }
+
+        #attractions-gallery{
+            width: 1100px;
+            height: 635px;
+            background-color: yellowgreen;
+            margin: 10px;
+        }
+
+        #attractions-gallery img{
+            border: 1px solid #666;
+        }
+
+        #photo{
+            text-align: left;
+        }
+
+
+        #attractions-gallery ul{
+            width: 1000px;
+            overflow: hidden;
+            margin: 0 auto;
+            background-color: tomato;
+        }
+
+
+        #photo_list ul li {
+            width: 300px;
+            height: 200px;
+            float: left;
+            background-size: cover;
+            background-position: center center;
+            text-align: center;
+        }
+
+        #photo_list {
+            width: 1100px;
+            margin: 10px auto;
+            overflow: hidden;
+            background-color: teal;
+        }
+
+
+        .travel-reviews{
+            width: 1600px;
+            height: 300px;
+            background-color: lightgray;
+            padding: 20px;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <!-- GNB -->
+    <div class="GNB"> 
+        GNB
+
+    </div>
+
+    <!-- 전체 페이지 제목, 여행 재검색 버튼 -->
+    <div class="main">
+        <h1 class="page-title" style="float:left;"> 당신에게 추천하는 여행계획 </h1>
+        <button class="search_angallery_button" style="float:left; margin-left: 20px;margin-top:40px">다른 여행지 찾기 ></button>
+    </div>
+    
+    <!-- 검색된 템플릿들의 썸네일 리스트 -->
+    <div class="search-results">
+        <p class="result-hashtag">#여름에_유럽으로_친구와_배낭여행</p>
+        <p class="result-explanation">생애 첫 유럽 배낭여행을 친구와 함께 떠나는 대학생에게 추천</p>
+        <div class="result-cards">
+            <div class="card" style="background-image:url('https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60');">
+            </div>
+        </div>
+    </div>
+
+    <!-- 디바이더 -->
+    <hr class="divider">
+
+    <!-- 여행 템플릿 -->
+    <div class="travel-template">
+        <!-- 여행 제목 -->
+        <div class="title">
+            <h2>알짜배기 그리스 여행</h2>
+        </div>
+
+        <!-- 미포함 항목 -->
+        <div class="not-included">
+            <p style="float:left;">미포함 항목</p>
+            <div class="items" style="float:left; margin-left: 10px; margin-top:17px;">
+                <button style="float:left; margin-right: 20px;">?</button>
+                <button style="float:left; margin-right: 3px;">비행기 티켓 ></button>
+                <button style="float:left;">산토리니 미술관 입장권 ></button>
+            </div>
+        </div>
+
+        <div style="clear:both;"> </div>
+
+        <!-- 구매, 저장, 공유하기 등 액션 버튼 -->
+        <div class="action-buttons">
+            <button>￦ 750,000</button>
+            <button>저장하기</button>
+            <button>공유하기</button>
+        </div>
+
+        <!-- 해당 여행에 포함된 어트랙션 리스트 -->
+        <div class="attractions">
+
+            <!-- 선택된 어트랙션 섬네일과 설명 -->
+            <div class="attraction-selected">
+                <!-- 선택된 어트랙션의 섬네일 -->
+                <div class="attraction-thumbnail" style="background-image:url('https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60');">
+                </div>
+                
+                <!-- 선택된 어트랙션의 설명 -->
+                <div class="attraction-details">
+                    <p class="attraction-details-title"> 산토리니 마을</p>
+                    <p class="attraction-details-details">
+                        하얀 원피스를 입은 소녀가 이온음료를 들고 돌아다닐 것 같은 이곳은 그 유명한 산토리니 마을. 그야말로 인생샷 건지기에 최적의 장소! <br>
+                        단 최고 성수기인 8월에는 도저히 사진을 찍을 수 없을 정도로 사람이 몰리니 가능하면 이 때를 피해 방문하자.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- 선택되지 않은 다른 어트랙션 섬네일 그룹 -->
+            <div id="attractions-gallery">
+                <p id="photo">
+                    <img src="https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" width="320" alt=""/>
+                </p>
+
+                <div id="photo_list">
+                    <ul id="inner_list">
+                        <li><a href="https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60">
+                            <img style="background-image:url('https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60')" alt="사진1"/></a></li>
+                        <li><a href="https://images.unsplash.com/photo-1531816458010-fb7685eecbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60">
+                            <img src="https://images.unsplash.com/photo-1531816458010-fb7685eecbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" alt="사진2"/></a></li>
+                        <li><a href="https://images.unsplash.com/photo-1508855173839-a6d69c12573a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60">
+                            <img src="https://images.unsplash.com/photo-1508855173839-a6d69c12573a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" alt="사진3"/></a></li>  
+                    </ul>
+                </div>
+
+                <p class="btn_wrap">
+                    <a href="#" id="before_btn">&lt;</a>
+                    <a href="#" id="next_btn">&gt;</a>
+                </p>
+            </div> 
+
+        </div>
+
+
+        
+    </div>
+
+    <!-- 디바이더 -->
+    <hr class="divider">
+
+    <!-- 다른 사람들의 여행 후기 -->
+    <div class="travel-reviews">
+        travel-reviews
+    </div>
+    
+</body>
+</html>
