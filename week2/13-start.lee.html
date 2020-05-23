@@ -44,18 +44,24 @@
               let combination = "";
 
               if (placed_bike < 2) {
-                combination =
-                  "<tr class=bad>\
-                    <td>" +
-                  holder_location +
-                  "</td>\
-                    <td>" +
-                  holdler_number +
-                  "</td>\
-                    <td>" +
-                  placed_bike +
-                  "</td>\
-                    </tr>";
+                // combination =
+                //   "<tr class=bad>\
+                //     <td>" +
+                //   holder_location +
+                //   "</td>\
+                //     <td>" +
+                //   holdler_number +
+                //   "</td>\
+                //     <td>" +
+                //   placed_bike +
+                //   "</td>\
+                //     </tr>";
+                combination = `<tr class=bad>
+                        <td>${holder_location}</td>
+                        <td>${holdler_number}</td>
+                        <td>${placed_bike}</td>
+                        </tr>`;
+                //백틱을 어떻게 쓰는지를 알아야 될 것 같음.....;;; [옵션+ ~ 하면 됨]
               } else {
                 combination =
                   "<tr class>\
