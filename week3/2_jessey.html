@@ -15,7 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+    <title>2_jessey</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 
@@ -45,14 +45,6 @@
         }
     </style>
     <script>
-        $(document).ready(function(){
-            listing();
-        });
-
-        function listing(){
-            console.log('실행되었습니다');
-        }
-
         function openclose() {
             let status = $('#post-box').css('display');
             if (status == 'block') {
@@ -63,6 +55,57 @@
                 $('#posting-box-btn').text('포스팅박스 닫기')
             }
         }
+
+        $(document).ready (function () {
+            listing();
+        });
+
+        function listing() {
+            console.log ('화면 로딩 후 잘 시작되었습니다.')
+            $("#cards-box").empty();
+
+            $.ajax ({
+            type: "GET",
+            url: "http://spartacodingclub.shop/post",
+            data: {},
+            success: function (response) {
+                let articles = response["articles"];
+
+                for (let i = 0; i < articles.length; i++) {
+                    let article = articles[i];
+                    make_card(article["comment"], article["desc"], article["image"], article["title"], article["url"]);
+                };
+ 
+                // for (let i = 0; i < articles.length; i++) {
+                //     let article = response["articles"][i];
+                //     let comment = article["comment"];
+                //     let desc = article["desc"];
+                //     let image = article["image"];
+                //     let title = article["title"];
+                //     let url = article["url"];
+
+                //     }
+                }
+            })
+        }
+
+        function make_card(comment, desc, image, title, url) {
+            let tempHtml = `
+                <div class="card">
+                    <img class="card-img-top"
+                    src="${image}"
+                    alt="Card image cap">
+                    <div class="card-body">
+                        <a href="${url}" class="card-title">${title}</a>
+                        <p class="card-text">${desc}</p>
+                        <p class="card-text comment">${comment}</p>
+                    </div>
+                </div>
+                `;
+
+            $("#cards-box").append(tempHtml);
+        }
+
     </script>
 </head>
 

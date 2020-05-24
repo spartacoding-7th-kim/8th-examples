@@ -45,14 +45,6 @@
         }
     </style>
     <script>
-        $(document).ready(function(){
-            listing();
-        });
-
-        function listing(){
-            console.log('실행되었습니다');
-        }
-
         function openclose() {
             let status = $('#post-box').css('display');
             if (status == 'block') {
@@ -63,6 +55,12 @@
                 $('#posting-box-btn').text('포스팅박스 닫기')
             }
         }
+        function listing(){
+            console.log('화면 로딩 후 실행 완료');
+        }
+        $(document).ready(function () {
+            listing();
+        });
     </script>
 </head>
 
