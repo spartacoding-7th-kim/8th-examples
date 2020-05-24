@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 from pymongo import MongoClient           # pymongo를 임포트 하기(패키지 인스톨 먼저 해야겠죠?)
 client = MongoClient('localhost', 27017)  # mongoDB는 27017 포트로 돌아갑니다.
-db = client.dbnavermovie                  # 'dbsparta'라는 이름의 db를 만듭니다.
+db = client.dbnavermoive                      # 'dbsparta'라는 이름의 db를 만듭니다.
 
 # URL을 읽어서 HTML를 받아오고,
 headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
@@ -18,13 +18,11 @@ movies = soup.select('#old_content > table > tbody > tr')
 # movies (tr들) 의 반복문을 돌리기
 for movie in movies:
     # movie 안에 a 가 있으면,
-    movie_title = movie.select_one('td.title > div > a')
-    movie_url = movie.select_one('td.title > div > a')
-    movie_score = movie.select_one('td.point')
-    if movie_title is not None:
-        print(movie_title.text, movie_url.get('href'), movie_score.text)
-    data = {movie_title, movie_url, movie_score}
-    db.movie.insert_one(data)
-
-
-#old_content > table > tbody > tr
+    a_tag = movie.select_one('td.title > div > a')
+    if a_tag is not None:
+        rank = movie.select_one('td:nth-child(1) > img')['alt'] # img 태그의 alt 속성값을 가져오기
+        title = a_tag.text                                      # a 태그 사이의 텍스트를 가져오기
+        star = movie.select_one('td.point').text                # td 태그 사이의 텍스트를 가져오기
+        print(rank,title,star)
+        data = {'rank':rank, 'title':title, 'star':star}
+        db.movie.insert_one(data)
