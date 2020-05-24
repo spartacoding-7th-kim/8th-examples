@@ -18,4 +18,4 @@ for movie in movies:
     a_number = movie.select_one('td > img')
     a_point = movie.select_one('td.point')
     if a_tag is not None and a_number is not None:
-        print(a_number['alt'], "/", a_tag.text, "/", a_point.text, "/", host + a_tag['href'])
+        print(a_number['alt'], "|", a_tag.text, "|", a_point.text, "|", host + a_tag['href'])
