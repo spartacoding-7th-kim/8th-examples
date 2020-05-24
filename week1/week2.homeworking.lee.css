@@ -1,0 +1,39 @@
+body {
+  background-color: ivory;
+}
+
+.image {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.subject {
+  text-align: center;
+}
+.name {
+  font-size: 20px;
+  font-weight: bold;
+}
+.detail {
+  text-align: center;
+}
+.form-control {
+  display: inline-block;
+}
+
+.order {
+  text-align: center;
+}
+.order_subject {
+  text-align: center;
+  width: 100px;
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.dropdown {
+  display: inline-block;
+}
+.order_button {
+  text-align: center;
+}
