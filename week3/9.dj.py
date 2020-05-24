@@ -1,10 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 
-from pymongo import MongoClient           # pymongo를 임포트 하기(패키지 인스톨 먼저 해야겠죠?)
-client = MongoClient('localhost', 27017)  # mongoDB는 27017 포트로 돌아갑니다.
-db = client.dbnavermovie                  # 'dbsparta'라는 이름의 db를 만듭니다.
-
 # URL을 읽어서 HTML를 받아오고,
 headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
 data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.nhn?sel=pnt&date=20200303',headers=headers)
@@ -18,13 +14,12 @@ movies = soup.select('#old_content > table > tbody > tr')
 # movies (tr들) 의 반복문을 돌리기
 for movie in movies:
     # movie 안에 a 가 있으면,
-    movie_title = movie.select_one('td.title > div > a')
-    movie_url = movie.select_one('td.title > div > a')
-    movie_score = movie.select_one('td.point')
-    if movie_title is not None:
-        print(movie_title.text, movie_url.get('href'), movie_score.text)
-    data = {movie_title, movie_url, movie_score}
-    db.movie.insert_one(data)
-
-
-#old_content > table > tbody > tr
+    a_tag = movie.select_one('td.title > div > a')
+    a_point = movie.select_one('td.point')
+    if a_tag is not None:
+        # a의 text를 찍어본다.
+        print (a_tag.text)
+        print (a_tag.get("href"))
+    if a_point is not None:
+        # a의 text를 찍어본다.
+        print (a_point.text)

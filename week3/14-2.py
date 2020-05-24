@@ -14,7 +14,7 @@ print(all_users[0]['name']) # 0번째 결과값의 'name'을 보기
 for user in all_users:      # 반복문을 돌며 모든 결과값을 보기
     print(user)
 
-'''
+
 # find
 user = db.users.find_one({'name':'bobby'})
 print(user)
@@ -22,7 +22,7 @@ print(user)
 # 그 중 특정 키 값을 빼고 보기
 user = db.users.find_one({'name':'bobby'},{'_id':False})
 print(user)
-'''
+
 
 '''
 # update
