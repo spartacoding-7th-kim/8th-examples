@@ -15,9 +15,10 @@ movies = soup.select('#old_content > table > tbody > tr')
 for movie in movies:
     # movie 안에 a 가 있으면,
     movie_title = movie.select_one('td.title > div > a')
+    movie_url = movie.select_one('td.title > div > a')
     movie_score = movie.select_one('td.point')
     if movie_title is not None:
-        print(movie_title.text, movie_score.text)
+        print(movie_title.text, movie_url.get('href'), movie_score.text)
 
 
 #old_content > table > tbody > tr
