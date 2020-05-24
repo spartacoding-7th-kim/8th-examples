@@ -18,13 +18,12 @@ movies = soup.select('#old_content > table > tbody > tr')
 # movies (tr들) 의 반복문을 돌리기
 for movie in movies:
     # movie 안에 a 가 있으면,
-    movie_title = movie.select_one('td.title > div > a')
-    movie_url = movie.select_one('td.title > div > a')
-    movie_score = movie.select_one('td.point')
-    if movie_title is not None:
-        print(movie_title.text, movie_url.get('href'), movie_score.text)
-    data = {movie_title, movie_url, movie_score}
-    db.movie.insert_one(data)
+    a_tag = movie.select_one('td.title > div > a')
+    if a_tag is not None:
+        rank = movie.select_one('td > img')['alt'] # img 태그의 alt 속성값을 가져오기
+        title = a_tag.text                                      # a 태그 사이의 텍스트를 가져오기
+        star = movie.select_one('td.point').text                # td 태그 사이의 텍스트를 가져오기
+        data = {'rank':rank, 'title':title, 'star':star}
+        db.movie.insert_one(data)
 
 
-#old_content > table > tbody > tr
