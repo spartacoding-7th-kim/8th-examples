@@ -20,12 +20,12 @@
             // 2. 만약 입력값이 빈칸이면 if(입력값=='')
             // 3. alert('입력하세요!') 띄우기
             // 4. alert(입력값) 띄우기
-            if($('#input-q1').val()==''){
+            if ($('#input-q1').val() == '') {
                 alert('아무거나 입력하세욧!');
             } else {
                 alert($('#input-q1').val());
             }
-            
+
 
         }
 
@@ -37,7 +37,7 @@
             // 5. 만약 이메일이 아니면 '이메일이 아닙니다.' 라는 얼럿 띄우기
             let input = $('#input-q2').val();
             // alert(input);
-            if(input.includes('@')){
+            if (input.includes('@')) {
                 let fafa = input.split('@')[1];
                 let mama = fafa.split('.')[0];
                 alert(mama);
@@ -47,7 +47,7 @@
             } else {
                 alert('이메일형식이 아닙니다');
             }
-            
+
             // // if($('#input-q2').val()==''
         }
 
@@ -58,19 +58,26 @@
 
             let text = $('#input-q3').val();
             let add_text = '<li>' + text + '</li>';
-            if($('#input-q3').val()==''){
+            if ($('#input-q3').val() == '') {
                 alert('아무거나 입력하세욧!');
             } else {
-            $('#names-q3').append(add_text);
+                $('#names-q3').append(add_text);
             }
         }
 
         function q3_remove() {
             // 1. names-q3의 내부 태그를 모두 비운다.(jQuery의 $('....').empty()를 이용하면 굿!)
             $('#names-q3').html("");
-            $('#input-q3').val("");
+            $('#input-q3').("");
             // $('#names-q3').empty;
         }
+
+        $(document).ready(function () {
+            $("#flip").click(function () {
+                $("#panel").slideToggle("slow");
+            });
+        });
+
 
     </script>
 
@@ -95,8 +102,10 @@
     </div>
     <hr />
     <div class="question-box">
-        <h2>3. HTML 붙이기/지우기 연습</h2>
-        <h5>3-1. 이름을 입력하면 아래 나오게 하기</h5>
+        <div id="flip">
+            3. HTML 붙이기/지우기 연습
+        </div>
+        <h5 id="panel">3-1. 이름을 입력하면 아래 나오게 하기</h5>
         <h5>[완성본]3-2. 다지우기 버튼을 만들기</h5>
         <input id="input-q3" type="text" placeholder="여기에 이름을 입력" />
         <button onclick="q3()">이름 붙이기</button>
