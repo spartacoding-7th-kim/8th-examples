@@ -30,7 +30,6 @@
                 type: "GET",
                 url: "http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/bikeList/1/99",
                 data: {},
-                dataType: {},
                 success: function (response) {
                     let rows = response["rentBikeStatus"]["row"];
                     for(let i=0; i< rows.length; i++)
