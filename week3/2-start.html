@@ -45,6 +45,14 @@
         }
     </style>
     <script>
+        $(document).ready(function(){
+            listing();
+        });
+
+        function listing(){
+            console.log('실행되었습니다');
+        }
+
         function openclose() {
             let status = $('#post-box').css('display');
             if (status == 'block') {
