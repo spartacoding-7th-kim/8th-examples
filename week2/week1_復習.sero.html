@@ -7,27 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
     <title>스파르타코딩클럽 | 나홀로메모장</title>
 
     <!-- 구글폰트 -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
 
     <!-- style -->
     <style type="text/css">
         * {
-            font-family: 'Noto Sans KR', sans-serif;
-            letter-spacing: -0.5px;
-            font-size: small;
+            font-family: 'Stylish', sans-serif;
         }
 
         .wrap {
@@ -36,7 +39,8 @@
         }
 
         .comment {
-            color: #f04e44;
+            color: blue;
+            font-weight: bold;
         }
 
         #post-box {
@@ -45,73 +49,24 @@
             padding: 50px;
             border: black solid;
             border-radius: 5px;
-            display: none;
         }
     </style>
-
     <script>
-        $(document).ready(function(){
-            listing();
-            $('#post-card').empty();
-        });
 
-        function listing(){
-            $.ajax({
-                type: "GET",
-                url: "http://spartacodingclub.shop/post",
-                data: {},
-                success: function(response){
-                    let article = response['articles'];
-                    for (let i = 0; i < article.length; i++) {
-                        makeCard(article[i]);
-                    }
-                }
-            })
-        }
-
-        function makeCard(article){
-            let title = article['title'];
-            let desc = article['desc'];
-            let url = article['url'];
-            let image = article['image'];
-            let comment = article['comment'];
-
-            let card_html = `<div class="card">
-                <img class="card-img-top"
-                    src="${image}"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <a href="${url}" class="card-title">${title}</a>
-                    <p class="card-text">${desc}</p>
-                    <p class="card-text comment">${comment}</p>
-                </div>
-            </div>`
-            $('#post-card').append(card_html);
-        }
-
-        function showhideBox(){
-            if($('#post-box').css('display') == 'none'){
-                $('#post-box').show();
-                $('#btn-posting-box').text('포스팅 박스 닫기');
+        let num = 0;
+        function hey() {
+            num += 1;
+            if (num % 2 == 0) {
+                $('#element').hide()
+                let test = $('#element').css('display');
+                console.log(test);
             } else {
-                $('#post-box').hide();
-                $('#btn-posting-box').text('포스팅 박스 열기');
+                $('#element').show();
+                let test = $('#element').css('display');
+                console.log(test);
             }
-        }
-        function posting() {
-            let postURL = $('#post-url').val();
-            let postComment = $('#post-comment').val();
-            let temp_html = `<div class="card">
-                <img class="card-img-top"
-                    src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <a href="${postURL}" class="card-title">기사 제목</a>
-                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
-                    <p class="card-text comment">${postComment}</p>
-                </div>
-            </div>`
-            $('#post-card').append(temp_html);
+
+
         }
 
     </script>
@@ -124,23 +79,23 @@
             <p class="lead">중요한 링크를 저장해두고, 나중에 볼 수 있는 공간입니다</p>
             <hr class="my-4">
             <p class="lead">
-                <button id="btn-posting-box" class="btn btn-primary btn-lg" onclick="showhideBox()">포스팅 박스 열기</button>
+                <button id="btn-posting-box" onclick="hey()" class="btn btn-primary btn-lg">포스팅박스 열기</button>
             </p>
         </div>
-        <div class="form-post" id="post-box">
+        <div id="post-box">
             <div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">아티클 URL</label>
-                    <input id="post-url" class="form-control" placeholder="">
+                    <input id="fafa" class="form-control" placeholder="">
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="element">
                     <label for="exampleFormControlTextarea1">간단 코멘트</label>
-                    <textarea id="post-comment" class="form-control" rows="2"></textarea>
+                    <textarea class="form-control" rows="2"></textarea>
                 </div>
-                <button onclick="posting()" type="button" class="btn btn-primary">기사저장</button>
+                <button type="button" class="btn btn-primary">기사저장</button>
             </div>
         </div>
-        <div id="post-card" class="card-columns">
+        <div class="card-columns">
             <div class="card">
                 <img class="card-img-top"
                     src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
