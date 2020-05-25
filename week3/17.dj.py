@@ -7,6 +7,7 @@ target_star = target_movie['star']
 print(target_star)
 
 movies = list(db.movie.find({'star':target_star}))
+# print(movies)
 for movie in movies :
     print(movie['title'])
 
