@@ -15,6 +15,8 @@ movies = soup.select('#old_content > table > tbody > tr')
 for movie in movies:
     # movie 안에 a 가 있으면,
     a_tag = movie.select_one('td.title > div > a')
+    # a_tag = movie.select('td.title > div > a')
+    print(a_tag)
     a_point = movie.select_one('td.point')
     if a_tag is not None:
         # a의 text를 찍어본다.
@@ -23,3 +25,4 @@ for movie in movies:
     if a_point is not None:
         # a의 text를 찍어본다.
         print (a_point.text)
+    

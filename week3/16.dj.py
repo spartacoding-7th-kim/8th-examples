@@ -16,6 +16,7 @@ soup = BeautifulSoup(data.text, 'html.parser')
 movies = soup.select('#old_content > table > tbody > tr')
 
 # movies (tr들) 의 반복문을 돌리기
+datalist = []
 for movie in movies:
     # movie 안에 a 가 있으면,
     a_tag = movie.select_one('td.title > div > a')
@@ -25,4 +26,8 @@ for movie in movies:
         star = movie.select_one('td.point').text                # td 태그 사이의 텍스트를 가져오기
         print(rank,title,star)
         data = {'rank':rank, 'title':title, 'star':star}
-        db.movie.insert_one(data)
+        print(data)
+        datalist.append(data)
+
+        
+db.movie.insert(datalist)
