@@ -55,12 +55,40 @@
                 $('#posting-box-btn').text('포스팅박스 닫기')
             }
         }
-        function listing(){
-            console.log('화면 로딩 후 실행 완료');
+        function listing() {
+            $.ajax({
+                type: "GET",
+                url: "http://spartacodingclub.shop/post",
+                data: {},
+                success: function (response) {
+                    console.log(response);
+                    let movies = response['articles'];
+                    console.log(movies);
+                    for (let i = 0; i < movies.length; i++) {
+                        let movie = movies[i]
+                        make_card(movie['image'], movie['url'], movie['title'], movie['desc'], movie['comment']);
+                    }
+                }
+            });
         }
+
         $(document).ready(function () {
             listing();
         });
+
+        function make_card(image, url, title, desc, comment) {
+            let movie_html = `<div class="card">
+                            <img class="card-img-top"
+                                src=${image}
+                                alt="Card image cap">
+                                <div class="card-body">
+                                    <a href=${url} class="card-title">${title}</a>
+                                    <p class="card-text">${desc}</p>
+                                    <p class="card-text comment">${comment}</p>
+                                </div>
+                            </div>`
+            $('#cards-box').append(movie_html);
+        }
     </script>
 </head>
 
@@ -86,58 +114,7 @@
             </div>
             <button type="submit" class="btn btn-primary">기사 저장</button>
         </div>
-        <div class="card-columns" id="cards-box">
-            <div class="card">
-                <img class="card-img-top"
-                    src="https://d2ur7st6jjikze.cloudfront.net/offer_photos/29590/185689_medium_1525763241.jpg?1525763241"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <a href="http://naver.com" class="card-title">여기 기사 제목이 들어가죠</a>
-                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
-                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top"
-                    src="https://d2ur7st6jjikze.cloudfront.net/offer_photos/29590/185689_medium_1525763241.jpg?1525763241"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <a href="http://naver.com" class="card-title">여기 기사 제목이 들어가죠</a>
-                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
-                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top"
-                    src="https://d2ur7st6jjikze.cloudfront.net/offer_photos/29590/185689_medium_1525763241.jpg?1525763241"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <a href="http://naver.com" class="card-title">여기 기사 제목이 들어가죠</a>
-                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
-                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top"
-                    src="https://d2ur7st6jjikze.cloudfront.net/offer_photos/29590/185689_medium_1525763241.jpg?1525763241"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <a href="http://naver.com" class="card-title">여기 기사 제목이 들어가죠</a>
-                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
-                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top"
-                    src="https://d2ur7st6jjikze.cloudfront.net/offer_photos/29590/185689_medium_1525763241.jpg?1525763241"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <a href="http://naver.com" class="card-title">여기 기사 제목이 들어가죠</a>
-                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
-                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
-                </div>
-            </div>
-        </div>
+        <div class="card-columns" id="cards-box"></div>
     </div>
 </body>
 
