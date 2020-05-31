@@ -64,13 +64,36 @@
                 data: {},
                 success: function (response) {
                     if (response['result'] == 'success') {
-                        alert(response['msg']);
+                        // alert(response['msg']);
+                        // console.log(response['reviews']);
+                        let reviews = response['reviews'];
+
+                        for (let index = 0; index < reviews.length; index++) {
+                            console.log(reviews[index]);
+                            make_card(reviews[index]);
+                            
+                        }
                         // 2. 성공했을 때 리뷰를 올바르게 화면에 나타내기
                     } else {
                         alert('리뷰를 받아오지 못했습니다');
                     }
                 }
             });
+        }
+
+        function make_card(review){
+            title = review['title'];
+            author = review['author'];
+            review = review['review'];
+
+            let card_html = `<tr>
+                        <td>${title}</td>
+                        <td>${author}</td>
+                        <td>${review}</td>
+                    </tr>`;
+
+            $("#orders-box").append(card_html);
+
         }
 
         function is_long(obj) {
