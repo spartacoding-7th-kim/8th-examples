@@ -9,6 +9,10 @@ data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.nhn?sel=pnt&d
 # soup이라는 변수에 "파싱 용이해진 html"이 담긴 상태가 됨
 # 이제 코딩을 통해 필요한 부분을 추출하면 된다.
 soup = BeautifulSoup(data.text, 'html.parser')
+soup = BeautifulSoup(data.text, 'html.parser')
+
+
+#old_content > table > tbody > tr
 
 #############################
 # (입맛에 맞게 코딩)
