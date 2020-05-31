@@ -21,7 +21,7 @@ def write_review():
     data_dict['title'] = title
     data_dict['author'] = author
     data_dict['review'] = review
-    # data_dict = {'title':request.form('title'), 'author':request.form('author'), 'review':request.form('review')}
+    # data_dict = {'title':request.form['title'], 'author':request.form['author'], 'review':request.form['review']}
 
     db.bookreview.insert_one(data_dict)
     return jsonify({'result':'success', 'msg': '이 요청은 POST!'})
@@ -29,7 +29,10 @@ def write_review():
 
 @app.route('/reviews', methods=['GET'])
 def read_reviews():
-    return jsonify({'result':'success', 'msg': '이 요청은 GET!'})
+    reviews = list(db.bookreview.find({},{'_id':0}))
+    # print(reviews) 
+    
+    return jsonify({'reviews':reviews, 'result':'success', 'msg': '이 요청은 GET!'})
 
 
 if __name__ == '__main__':
