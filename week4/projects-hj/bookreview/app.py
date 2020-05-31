@@ -30,10 +30,13 @@ def write_review():
 
 @app.route('/reviews', methods=['GET'])
 def read_reviews():
-		# 1. 모든 reviews의 문서를 가져온 후 list로 변환합니다.
-        
-		# 2. 성공 메시지와 함께 리뷰를 보냅니다.
-    return jsonify({'result': 'success'})
+    # 1. 모든 reviews의 문서를 가져온 후 list로 변환합니다.
+    # find({}) = 모든걸 받아온다
+    # find({},{'_id':0}) = id만 빼고 가져온다
+    reviews = list(db.reviews.find({},{'_id':0}))
+    print(reviews)
+    # 2. 성공 메시지와 함께 리뷰를 보냅니다.
+    return jsonify({'result': 'success', 'reviews':reviews})
 
 
 if __name__ == '__main__':
