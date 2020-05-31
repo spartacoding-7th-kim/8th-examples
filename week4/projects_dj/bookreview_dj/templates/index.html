@@ -44,7 +44,7 @@
             $.ajax({
                 type: 'POST', // 타입을 작성합니다.
                 url: '/reviews', // url을 작성합니다.
-                data: {'title':title, 'author':author, 'review':review}, // data를 작성합니다. },
+                data: { 'title': title, 'author': author, 'review': review }, // data를 작성합니다. },
                 success: function (response) {
                     if (response['result'] == 'success') {
                         alert(response['msg']);
@@ -66,7 +66,24 @@
                     if (response['result'] == 'success') {
                         alert(response['msg']);
                         // 2. 성공했을 때 리뷰를 올바르게 화면에 나타내기
-                    } else {
+                        let reviews = response['reviews'];
+                        console.log(reviews);
+
+                        for (let i=0; i<reviews.length; i++){
+                            title = reviews[i]['title'];
+                            author = reviews[i]['author'];
+                            review = reviews[i]['review'];
+                            let data_html = `
+                            <tr>
+                                <td>${title}</td>
+                                <td>${author}</td>
+                                <td>${review}</td>
+                            </tr>`
+                            $('#orders-box').append(data_html);
+                        }
+                    } 
+                    
+                    else {
                         alert('리뷰를 받아오지 못했습니다');
                     }
                 }
