@@ -16,15 +16,43 @@ def home():
 @app.route('/memo', methods=['GET'])
 def listing():
     # 1. 모든 document 찾기 & _id 값은 출력에서 제외하기
+    articles = list(db.metas.find({}, {'_id':0}))
     # 2. articles라는 키 값으로 영화정보 내려주기
-    return jsonify({'result':'success', 'msg':'GET 연결되었습니다!'})
+    return jsonify({'articles':articles, 'result':'success', 'msg':'GET 연결되었습니다!'})
 
 ## API 역할을 하는 부분
 @app.route('/memo', methods=['POST'])
 def saving():
-		# 1. 클라이언트로부터 데이터를 받기
-		# 2. meta tag를 스크래핑하기
-		# 3. mongoDB에 데이터 넣기
+    posting_url = request.form['posting_url_key']
+    posting_comment = request.form['posting_comment_key']
+	# 1. 클라이언트로부터 데이터를 받기
+    
+    ###############################
+
+    # 2. meta tag를 스크래핑하기
+    headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+    data = requests.get('https://platum.kr/archives/120958', headers = headers)
+
+    soup = BeautifulSoup(data.text, 'html.parser')
+
+    og_title = soup.select_one('meta[property="og:title"]')['content']
+    og_img = soup.select_one('meta[property="og:image"]')['content']
+    og_url = soup.select_one('meta[property="og:url"]')['content']
+    og_desc = soup.select_one('meta[property="og:description"]')['content']
+
+    title = "test title"
+    description = "test desc"
+
+    data_dict = {  }
+    data_dict['img'] = og_img
+    data_dict['title'] = og_title
+    data_dict['desc'] = og_desc
+    data_dict['comment'] = posting_comment
+    data_dict['url'] = og_url
+
+	# 3. mongoDB에 데이터 넣기
+    db.metas.insert_one(data_dict)
+
     return jsonify({'result': 'success', 'msg':'POST 연결되었습니다!'})
 
 if __name__ == '__main__':
