@@ -1,4 +1,4 @@
-from pymongo import MongoClient
+from pymongo import MongoClient, DESCENDING
 
 from flask import Flask, render_template, jsonify, request
 app = Flask(__name__)
@@ -15,8 +15,10 @@ def home():
 # API 역할을 하는 부분
 @app.route('/api/list', methods=['GET'])
 def star_list():
+    print(request.form)
+    print(request.args.get("name_give"))
     # 1. mystar 목록 전체를 검색합니다. ID는 제외하고 like 가 많은 순으로 정렬합니다.
-    stars = list(db.mystar.find({},{'_id':False}).sort('like',-1))
+    stars = list(db.mystar.find({},{'_id':False}).sort('like',DESCENDING))
     # 2. 성공하면 success 메시지와 함께 stars 목록을 클라이언트에 전달합니다.
     return jsonify({'result': 'success','stars_list':stars})
 
@@ -25,6 +27,8 @@ def star_list():
 def star_like():
     # 1. 클라이언트가 전달한 name_give를 name_receive 변수에 넣습니다.
     name_receive = request.form['name_give']
+    print(request.form.get("name_give"))
+    print(request.args)
 
     # 2. mystar 목록에서 find_one으로 name이 name_receive와 일치하는 star를 찾습니다.
     star = db.mystar.find_one({'name':name_receive})

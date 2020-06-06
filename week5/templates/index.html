@@ -45,7 +45,7 @@
         $.ajax({
             type: "GET",
             url: "/api/list",
-            data: {},
+            data: {'name_give': 'empty_name'},
             success: function (response) {
                 // 3. 서버가 돌려준 star_list를 star라는 변수에 저장합니다.
                 let stars = response['stars_list']
