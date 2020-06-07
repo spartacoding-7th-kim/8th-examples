@@ -80,7 +80,7 @@
                     if (response['result'] == 'success') {
                         let reviews = response['reviews'];
                         for (let i = 0; i < reviews.length; i++) {
-                            make_card(revoews[i]['title'], reviews[i]['author'], reviews[i]['review']);
+                            make_card(reviews[i]['title'], reviews[i]['author'], reviews[i]['review']);
                         }
                     
                     } else {
