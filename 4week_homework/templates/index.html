@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 부트스트랩 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!-- 자바스크립트 및 jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- 구글폰트 -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css.css') }}" />
+
+    <title>물건파는 사이트</title>
+
+    <!-- 여기서 부터 자바스크립트 코드를 쓰도록 함 -->
+    <script>
+        $(document).ready(function(){
+            listing();
+            $("#orders-box").html(""); //새로고침하면서 새로운 결과만 보여줄 수 있도록 함
+        })
+        
+        function saving() {
+            let name = $('#name').val();
+            let quantity = $('#quantity').val();
+            let address = $('#address').val();
+            let phone = $('#phone').val();
+
+            console.log(name,quantity,address,phone);
+            
+            if (name==''){
+                alert('이름을 채워주세요');
+                return;
+            }
+            else if (quantity==''){
+                alert('수량을 선택 해 주세요');
+                return;
+            }
+            else if (address =='') {
+                alert('주소를 입력 해 주세요');
+                return;
+            }
+            else if (phone ==''){
+                alert ('전화번호를 입력 해 주세요');
+                return;
+            }
+            
+            $.ajax({
+                type: "POST",
+                url: "/order",
+                data: {name_give : name, quantity_give : quantity, address_give :address, phone_give : phone},
+                // dataType: "dataType",
+                success: function (response) {
+                    if (response['result'] == 'success'){
+                        alert(response['msg']);
+                        window.location.reload();
+                    }
+                    else {
+                        alert('못받아왔어요');
+                    }
+                    
+                }
+            });
+
+        }
+    
+        function listing() {
+            $.ajax({
+                type: "GET",
+                url: "/order",
+                data: {},
+                // dataType: "dataType",
+                success: function (response) {
+                    if(response['result']=='success'){
+                        let all_orders = response['all_orders']
+                        for (let i = 0; i < all_orders.length; i++) {
+                            let name = all_orders[i]['name'];
+                            let quantity = all_orders[i]['quantity'];
+                            let address = all_orders[i]['address'];
+                            let phone = all_orders[i]['phone'];
+                            let temp_html = `
+                            <tr>
+                <td>${name}</td>
+                <td>${quantity}</td>
+                <td>${address}</td>
+                <td>${phone}</td>
+              </tr>
+                            `
+                            $('#orders-box').append(temp_html);
+                            
+                        }
+                    }
+                    
+                }
+            });
+            
+        }
+
+    </script>
+
+    
+
+
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="info">
+        <div class="img">
+          <img
+            src="https://shop-phinf.pstatic.net/20200506_160/15886980642307Wrnx_PNG/26058802838651244_1429572248.png?type=m510"
+            alt=""
+          />
+        </div>
+        <h1>인디언행어 판매중!</h1>
+        &nbsp; &nbsp;
+        <h5>35900원 / 1개</h5>
+        <p class="desc">감성캠핑의 필수품! 인디언 행어를 판매합니다.</p>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon3">주문자 이름</span>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            aria-describedby="basic-addon3"
+          />
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">수량</label>
+            </div>
+            <select class="custom-select" id="quantity">
+              <option selected>수량을 선택 해 주세요</option>
+              <option value="1">1개</option>
+              <option value="2">2개</option>
+              <option value="3">3개</option>
+            </select>
+          </div>
+
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon3">주소</span>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            id="address"
+            aria-describedby="basic-addon3"
+          />
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3">전화번호</span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              id="phone"
+              aria-describedby="basic-addon3"
+            />
+          </div>
+          <button type="button" class="btn btn-primary" id="order-button" onclick="saving()">주문하기</button>
+        </br>
+    </br>
+    
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">이름</th>
+                <th scope="col">수량</th>
+                <th scope="col">주소</th>
+                <th scope="col">전화번호</th>
+              </tr>
+            </thead>
+            <tbody id="orders-box">
+              <tr>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+              </tr>
+            </tbody>
+          </table>
+
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+
+      </div>
+    </div>
+  </body>
+</html>

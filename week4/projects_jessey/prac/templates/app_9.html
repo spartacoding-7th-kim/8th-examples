@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <script>
+        function get_post() {
+            $.ajax({
+            type: "GET",
+            url: "/test",
+            data: { title_give: '봄날은간다' },
+            success: function (response) {
+                console.log(response)
+            }
+        })
+        $.ajax({
+            type: "POST",
+            url: "/test",
+            data: { title_give: '봄날은간다' },
+            success: function (response) {
+                console.log(response)
+            }
+        })
+            
+        }
+
+        get_post();
+    </script>
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

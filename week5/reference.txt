@@ -1,0 +1,24 @@
+* <class 'bs4.element.Tag'>
+    * https://www.crummy.com/software/BeautifulSoup/bs4/doc/#attributes
+
+* jquery html()
+    * https://www.codingfactory.net/10324
+
+
+* flask request
+    * https://flask.palletsprojects.com/en/1.1.x/api/#flask.request
+
+* flask request args get
+    * https://flask.palletsprojects.com/en/1.1.x/api/#flask.Request.args
+    * https://werkzeug.palletsprojects.com/en/1.0.x/wrappers/#werkzeug.wrappers.BaseRequest.args
+* flask request form
+    * https://flask.palletsprojects.com/en/1.1.x/api/#flask.Request.form
+
+* form data
+    * https://medium.com/@mystar09070907/%EC%9B%B9-%ED%8E%98%EC%9D%B4%EC%A7%80-client-%EC%97%90%EC%84%9C-%EC%A0%95%EB%B3%B4-%EB%B3%B4%EB%82%B4%EA%B8%B0-bf3aff952d3d
+
+* pymongo find
+    * https://api.mongodb.com/python/current/api/pymongo/collection.html#pymongo.collection.Collection.find
+* pymongo sort
+    * https://api.mongodb.com/python/current/api/pymongo/cursor.html#pymongo.cursor.Cursor.sort
+    * https://api.mongodb.com/python/current/api/pymongo/collection.html#pymongo.DESCENDING
