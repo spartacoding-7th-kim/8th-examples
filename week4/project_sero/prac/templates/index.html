@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Document</title>
-    <!-- <script>
+    <script>
+        function test() {
         $.ajax({
             type: "GET",
-            url: "/test?title_give=봄날은간다",
-            data: {},
+            url: "/test",
+            data: {title_give: 'TESTTEST봄날은간다'},
             success: function (response) {
                 console.log(response)
             }
@@ -23,13 +24,18 @@
                 console.log(response)
             }
         })
-    </script> -->
+        }
+
+        test()
+        
+    </script>
 
 </head>
 
 <body>
     <h1>서버를 만들었다!</h1>
     <img src="{{ url_for('static', filename='rome.jpg') }}" />
+    test()
 </body>
 
 </html>
