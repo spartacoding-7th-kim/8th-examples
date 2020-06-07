@@ -11,6 +11,9 @@
       div.question-box {
         margin: 10px 0 20px 0;
       }
+      .bad {
+        color: red;
+      }
     </style>
 
     <script>
@@ -25,9 +28,16 @@
             for (let i = 0; i < rows.length; i++) {
               let district = rows[i]["MSRSTE_NM"];
               let dust = rows[i]["IDEX_MVL"];
-              let result = district + ":" + dust;
-              let html = "<li>" + result + "</li>";
-              $("#names-q1").append(html);
+              //   let result = district + ":" + dust;
+              //   let html = "<li>" + result + "</li>";
+              //   $("#names-q1").append(html);
+              let temp_html = "";
+              if (dust >= 70) {
+                temp_html = "<li class=bad>" + district + ":" + dust + "</li>";
+              } else {
+                temp_html = "<li>" + district + ":" + dust + "</li>";
+              }
+              $("#names-q1").append(temp_html);
             }
           },
         });

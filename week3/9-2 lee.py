@@ -30,4 +30,4 @@ for movie in movies:
     a_tag = movie.select_one('td.title > div > a')
     if a_tag is not None:
         print(a_tag.get("href"))
-        print(a.tag['href'])
+        print(a_tag['href'])

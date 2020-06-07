@@ -64,14 +64,48 @@
         }
       }
     </script>
-
     <script>
       $(document).ready(function () {
         listing();
       });
 
       function listing() {
-        console.log("화면 로딩 후 잘 실행 되었습니다");
+        $.ajax({
+          type: "GET",
+          url: "http://spartacodingclub.shop/post",
+          data: {},
+          // dataType: "dataType",
+          success: function (response) {
+            let articles = response["articles"];
+            for (let i = 0; i < articles.length; i++) {
+              let article = articles[i];
+              make_card(
+                article["comment"],
+                article["desc"],
+                article["image"],
+                article["title"],
+                article["url"]
+              );
+            }
+          },
+        });
+      }
+      function make_card(comment, desc, image, title, url) {
+        let temp_html = `img
+            class="card-img-top"
+            src="${image}"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <a href="${url}" class="card-title"
+              >${title}</a
+            >
+            <p class="card-text">
+              ${desc}
+            </p>
+            <p class="card-text comment">${comment}</p>`;
+
+        $("#cards-box").append(temp_html);
       }
     </script>
   </head>
