@@ -12,9 +12,11 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    
+   
   </head>
   <body>
-    <script
+    <script 
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
       crossorigin="anonymous"
@@ -74,15 +76,19 @@
           aria-haspopup="true"
           aria-expanded="false"
         >
+
           수량을 선택 해 주세요
         </button>
-
+        
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="#">1개</a>
           <a class="dropdown-item" href="#">2개</a>
           <a class="dropdown-item" href="#">3개</a>
         </div>
+        
       </div>
+     
+      <br />
 
       <div class="order_subject">주소</div>
 
@@ -108,7 +114,7 @@
       <br />
       <br />
       <div class="order_button">
-        <button type="button" class="btn btn-primary btn-lg">주문하기</button>
+        <button onclick=order() type="button" class="btn btn-primary btn-lg">주문하기</button>
       </div>
     
     <br />
