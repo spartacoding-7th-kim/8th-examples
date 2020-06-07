@@ -118,12 +118,13 @@
                 type: 'POST',
                 url: '/api/delete',
                 data: {
-                    name_give: name
+                    'name_give': name
                 },
                 success: function (response) {
                     if (response['result'] == 'success') {
                         let msg = response['msg'];
                         alert(msg);
+                        window.location.reload();
                     }
                 }
             });
