@@ -33,7 +33,7 @@ def saving():
 
     
     img_url = "https://movie-phinf.pstatic.net/20190115_228/1547528180168jgEP7_JPEG/movie_image.jpg?type=m665_443_2"
-    title =" test title"
+    title ="test title"
     description = " test desc"
 
     data_dict = {    }

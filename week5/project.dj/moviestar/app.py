@@ -30,7 +30,13 @@ def star_like():
     # 4. mystar 목록에서 name이 name_receive인 문서의 like 를 new_like로 변경합니다.
     # 참고: '$set' 활용하기!
     # 5. 성공하면 success 메시지를 반환합니다.
-	return jsonify({'result': 'success','msg':'like 연결되었습니다!'})
+    name_receive = request.form['name_give']
+    star = db.mystar.find_one({'name':name_receive})
+
+    like_new = star['like']+1
+    db.mystar.update_one({'name':name_receive},{'$set':{'like':like_new}})
+
+    return jsonify({'result': 'success','msg':'like 연결되었습니다!','like_new':like_new})
 
 
 @app.route('/api/delete', methods=['POST'])
@@ -38,7 +44,10 @@ def star_delete():
     # 1. 클라이언트가 전달한 name_give를 name_receive 변수에 넣습니다.
     # 2. mystar 목록에서 delete_one으로 name이 name_receive와 일치하는 star를 제거합니다.
     # 3. 성공하면 success 메시지를 반환합니다.
-	return jsonify({'result': 'success','msg':'delete 연결되었습니다!'})
+    name_receive = request.form['name_give']
+    db.mystar.delete_one({'name':name_receive})
+    
+    return jsonify({'result': 'success','msg':'delete 연결되었습니다!'})
 
 
 if __name__ == '__main__':
